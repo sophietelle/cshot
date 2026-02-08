@@ -73,11 +73,15 @@ add_executable(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME} PRIVATE
     ./include
     ${CMAKE_CURRENT_BINARY_DIR}/include
-    ${WAYLAND_INCLUDE_DIRS}
-    ${CAIRO_INCLUDE_DIRS}
-    ${XKB_INCLUDE_DIRS}
     #${GIO_INCLUDE_DIRS}
 )
+
+target_compile_options(${PROJECT_NAME} PRIVATE
+    ${WAYLAND_CFLAGS}
+    ${CAIRO_CFLAGS}
+    ${XKB_CFLAGS}
+)
+
 target_link_libraries(${PROJECT_NAME} PRIVATE
     ${WAYLAND_LIBRARIES}
     ${CAIRO_LIBRARIES}
