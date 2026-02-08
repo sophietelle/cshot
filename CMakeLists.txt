@@ -55,8 +55,6 @@ set(CMAKE_C_EXTENSIONS OFF)
 add_compile_definitions(PROJECT_NAME="${PROJECT_NAME}" _POSIX_C_SOURCE=200809L)
 add_compile_options(
     -Wall -Wextra -Wpedantic -Wno-incompatible-pointer-types
-    -march=nocona -mtune=core-avx2 -O2 -mfpmath=sse -pipe -flto
-    -fwrapv -fPIC -ffunction-sections -fdata-sections -fno-plt
 )
 add_link_options("SHELL:LINKER:-s,-O1,--gc-sections,--as-needed")
 
